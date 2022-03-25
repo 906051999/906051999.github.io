@@ -1,0 +1,26 @@
+{
+  "name": "906051999.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/906051999/906051999.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/906051999/906051999.github.io/issues"
+  },
+  "homepage": "https://github.com/906051999/906051999.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.36"
+  }
+}
