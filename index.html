@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>快慢指针 | 你好， VuePress ！</title><meta name="description" content="这是我的第一个 VuePress 站点">
+    <link rel="modulepreload" href="/assets/app.d5663045.js"><link rel="modulepreload" href="/assets/index.html.ad641778.js"><link rel="modulepreload" href="/assets/index.html.bb4fafc7.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/assets/style.39d5bbe5.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container no-sidebar"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a aria-current="page" href="/" class="router-link-active router-link-exact-active"><img class="logo" src="https://vuejs.org/images/logo.png" alt="你好， VuePress ！"><span class="site-name can-hide">你好， VuePress ！</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><!----><!--[--><!--]--></aside><!--]--><!--[--><main class="home"><header class="hero"><img src="/logo.png" alt="你好， VuePress ！"><h1 id="main-title">你好， VuePress ！</h1><p class="description">这是我的第一个 VuePress 站点</p><!----></header><div class="features"><!--[--><div class="feature"><h2>简洁至上()</h2><p>以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。</p></div><div class="feature"><h2>Vue驱动</h2><p>享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。</p></div><div class="feature"><h2>高性能</h2><p>VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。</p></div><!--]--></div><div class="theme-default-content custom"><!--[--><h1 id="快慢指针" tabindex="-1"><a class="header-anchor" href="#快慢指针" aria-hidden="true">#</a> 快慢指针</h1><p>快慢指针就是定义两根指针，移动的速度一快一慢，以此来制造出自己想要的差值。<strong>这个差值可以让我们找到链表上相应的节点。</strong></p><h2 id="找中间值" tabindex="-1"><a class="header-anchor" href="#找中间值" aria-hidden="true">#</a> 找中间值</h2><p>一般的思路是：先遍历一次链表，记录住一共有多少个节点，然后，再次遍历找寻中点。</p><p>利用快慢指针，我们来看看这个问题会变成什么样。思路如下：<strong>我们把一个链表看成一个跑道，假设a的速度是b的两倍，那么当a跑完全程后，b刚好跑一半，以此来达到找到中间节点的目的。</strong></p><p><img src="/images/v9aMwnJGp_NtrtFBhQSVHip9aVTJSDsKCMn24erpKJs.png" alt="image"></p><h2 id="求一个有序链表的值域的中位数" tabindex="-1"><a class="header-anchor" href="#求一个有序链表的值域的中位数" aria-hidden="true">#</a> <strong>求一个有序链表的值域的中位数</strong></h2><p>原理是：快指针的移动速度是慢指针移动速度的2倍，因此当快指针到达链表尾时，慢指针到达中点；程序还要考虑链表结点个数的奇偶数因素，当快指针移动x次后到达表尾（1+2x），说明链表有奇数个结点，直接返回慢指针指向的数据即可；如果快指针是倒数第二个结点，说明链表结点个数是偶数，这时可以根据“规则”返回上中位数或下中位数或（上中位数+下中位数）的一半</p><h2 id="判断链表中的环" tabindex="-1"><a class="header-anchor" href="#判断链表中的环" aria-hidden="true">#</a> 判断链表中的环</h2><p>快慢指针中，因为每一次移动后，快指针都会比慢指针多走一个节点，所以他们之间在进入环状链表后，不论相隔多少个节点，慢指针总会被快指针赶上并且重合，此时就可以判断必定有环。</p><p><img src="/images/_3XQcu6kE7cl_FJ4WfCZJRp26vE0ZT9YcS1oL-S-IMg.png" alt="image"></p><h2 id="判断循环链表的循环入口位置" tabindex="-1"><a class="header-anchor" href="#判断循环链表的循环入口位置" aria-hidden="true">#</a> <strong>判断循环链表的循环入口位置</strong></h2><p>快慢指针如果相遇则一定是在环内，可以从这个节点出发，一边继续向前移动一边计数，当再次回到这个节点时，即可得到环中的节点数了</p><p><img src="/images/04O4JJqkw7CmLgJcoKCphyEA1gzHF5ZA2T7-BnvAylg.png" alt="image"></p><p>“我的理解是两个人a和b跑步, 假如a的速度是1m/s， b的速度是2m/s, 跑场总长10m， a, b绕圈跑，当b跑的总距离是a跑的总距离 2的整数倍时，那么此时a,b将会相遇，相遇点就是起跑点(即环的入口)”</p><p>“前提是a，b都跑过了一圈以上。”</p><h2 id="删除倒数第n个节点" tabindex="-1"><a class="header-anchor" href="#删除倒数第n个节点" aria-hidden="true">#</a> 删除倒数第n个节点</h2><p>删除倒数第n个节点，那就等于是要我们先找出待删除元素前一个元素，也就是第n-1个节点。那如何找第(n-1)个元素呢？我们一开始就让fast指针比slow指针快n+1个元素，接下来，两个指针都是一步一步来往下走。那么当fast指针走完时，slow指针就刚刚好停留在第(n-1)个元素上。</p><p>以下图解了n=2时的情形（其中dummyHead是我们手动加上去的虚拟头节点）：</p><p><img src="/images/XB9EkJgdns_GrEcrFArXutGyTSG-vcdRGneweUR6I80.png" alt="image"></p><!--]--></div><!--[--><div class="footer">MIT Licensed | Copyright © 2018-present Evan You</div><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.d5663045.js" defer></script>
+  </body>
+</html>
